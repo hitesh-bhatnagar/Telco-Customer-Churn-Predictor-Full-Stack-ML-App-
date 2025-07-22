@@ -7,17 +7,17 @@ import joblib
 import shap
 import matplotlib.pyplot as plt
 
-# -------------------------
+
 # Load saved artifacts
-# -------------------------
+
 model = joblib.load("models/lgbm_model_tuned.pkl")
 scaler = joblib.load("models/scaler.pkl")
 scaled_cols = joblib.load("models/scaled_columns.pkl")
 all_features = joblib.load("models/feature_columns.pkl")
 
-# -------------------------
+
 # Streamlit UI
-# -------------------------
+
 st.set_page_config(page_title="Telco Churn Predictor", layout="centered")
 st.title("📞 Telco Customer Churn Predictor")
 st.markdown("This app predicts whether a customer will churn using a trained ML model.")
@@ -47,9 +47,9 @@ with st.form("customer_form"):
 
     submit_btn = st.form_submit_button("Predict Churn")
 
-# -------------------------
+
 # Feature Engineering
-# -------------------------
+
 def engineer_features(input_df):
     df = input_df.copy()
 
@@ -72,9 +72,9 @@ def engineer_features(input_df):
 
     return df
 
-# -------------------------
+
 # Predict & Explain
-# -------------------------
+
 if submit_btn:
     raw_input = pd.DataFrame([{
         "gender": gender,
@@ -114,7 +114,7 @@ if submit_btn:
     prob = model.predict_proba(fe_input)[0][1]
 
     st.markdown("---")
-    st.subheader("📊 Prediction Result")
+    st.subheader(" Prediction Result")
     if prediction == 1:
         st.error(f"❌ Customer is likely to churn! (Confidence: {prob:.2%})")
     else:
@@ -122,7 +122,7 @@ if submit_btn:
 
     # SHAP Explanation
     st.markdown("---")
-    st.subheader("🧠 Model Explanation (SHAP)")
+    st.subheader(" Model Explanation (SHAP)")
     shap.initjs()
 
     explainer = shap.Explainer(model)

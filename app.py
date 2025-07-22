@@ -4,7 +4,7 @@ import requests
 
 st.set_page_config(page_title="Telco Churn Predictor", layout="centered")
 
-st.title("📊 Telco Customer Churn Predictor")
+st.title(" Telco Customer Churn Predictor")
 
 st.markdown("Fill in the customer information below:")
 
@@ -36,7 +36,7 @@ total_charges = st.number_input("Total Charges", min_value=0.0, value=1000.0)
 # -----------------------------
 # Step 2: API Call on Submit
 # -----------------------------
-if st.button("🚀 Predict Churn"):
+if st.button(" Predict Churn"):
     with st.spinner("Contacting ML model..."):
 
         # Prepare input data
@@ -74,7 +74,7 @@ if st.button("🚀 Predict Churn"):
                 prob = result['probability']
 
                 st.success(f"✅ Prediction: {'Churn' if pred == 1 else 'No Churn'}")
-                st.info(f"📊 Probability of churn: {prob*100:.2f}%")
+                st.info(f" Probability of churn: {prob*100:.2f}%")
             else:
                 st.error("❌ Something went wrong. Try again.")
         except Exception as e:

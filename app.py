@@ -19,7 +19,7 @@ all_features = joblib.load("models/feature_columns.pkl")
 # Streamlit UI
 
 st.set_page_config(page_title="Telco Churn Predictor", layout="centered")
-st.title("📞 Telco Customer Churn Predictor")
+st.title("Telco Customer Churn Predictor")
 st.markdown("This app predicts whether a customer will churn using a trained ML model.")
 
 # Collect user input
@@ -128,5 +128,9 @@ if submit_btn:
     explainer = shap.Explainer(model)
     shap_values = explainer(fe_input)
 
-    st.set_option("deprecation.showPyplotGlobalUse", True)
-    st.pyplot(shap.plots.waterfall(shap_values[0], max_display=10))
+
+
+    fig, ax = plt.subplots()
+    shap.plots.waterfall(shap_values[0], max_display=10, show=False)
+    plt.tight_layout()
+    st.pyplot(fig)

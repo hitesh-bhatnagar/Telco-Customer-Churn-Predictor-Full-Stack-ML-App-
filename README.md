@@ -1,92 +1,90 @@
-# Telco Customer Churn Prediction - Full Stack ML App
+# Telco Customer Churn Prediction – Full Stack ML App
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ML-FullStack-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/FastAPI-Deployed-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Streamlit-UI-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ML--End2End-green?style=for-the-badge" alt="End-to-End ML" />
+  <img src="https://img.shields.io/badge/FastAPI--Backend-blue?style=for-the-badge" alt="FastAPI Backend" />
+  <img src="https://img.shields.io/badge/Streamlit--UI-red?style=for-the-badge" alt="Streamlit UI" />
+  <img src="https://img.shields.io/badge/Deployment--Live-success?style=for-the-badge" alt="Live Deployment" />
 </p>
 
 ---
 
-## 📌 Overview
+## Project Overview
 
-This project is a complete end-to-end **Telco Customer Churn Prediction** system designed for real-world data science pipelines.
+This project is a **real-world, production-grade Customer Churn Prediction System** built to showcase the complete skillset of a Data Scientist.
 
-We go beyond just training a model — we simulate a full **data science deployment environment** including:
+It goes beyond Jupyter notebooks and delivers:
 
-- Realistic data ingestion and cleaning (PostgreSQL, CSV)
-- Advanced feature engineering
-- Multiple baseline and tuned ML models
-- SHAP interpretability
-- API development with **FastAPI**
-- **Streamlit frontend UI**
-- Final product deployment
+- End-to-end ML pipeline (cleaning → modeling → tuning → explainability)
+- **Interactive web app** using Streamlit
+- **REST API service** using FastAPI
+- Deployment-ready structure for both UI and API
 
-This project is ready for deployment and can be showcased in portfolios or interviews.
+🔧 Designed as a portfolio-ready project to **showcase full-stack ML engineering** in placement rounds and real-world interviews.
 
 ---
 
-## 🏗️ Features
+## Key Highlights
 
-✅ Real-world telecom churn dataset  
-✅ PostgreSQL + CSV ingestion  
-✅ Full preprocessing & outlier treatment  
-✅ Advanced Feature Engineering  
-✅ Logistic Regression, LightGBM, RandomForest  
-✅ SHAP Explainability for feature impact  
-✅ Trained model exposed as FastAPI endpoint  
-✅ Streamlit UI frontend  
-✅ Local and Cloud-ready  
-✅ GitHub + Streamlit Cloud + Render deployable
-
----
-
-## 🚀 Tech Stack
-
- Layer               | Tool                          
-
-| 📊 Data           | Pandas, NumPy, PostgreSQL     |
-| 🧠 ML Model       | Scikit-learn, LightGBM        |
-| 🧪 Explainability | SHAP                          |
-| 🔧 Backend        | FastAPI, Uvicorn              |
-| 🎨 Frontend       | Streamlit                     |
-| ☁️ Deployment     | GitHub, Streamlit Cloud       |
+- ✅ **Real Telco dataset** from Kaggle
+- ✅ Feature Engineering (tenure buckets, service counts, log transforms)
+- ✅ Preprocessing: Scaling, Imputation, Outlier handling
+- ✅ ML Models: Logistic Regression, LightGBM, RandomForest
+- ✅ Model Tuning & Cross-validation
+- ✅ SHAP Explainability (Waterfall, Summary, Force plots)
+- ✅ Live predictions via **Streamlit App**
+- ✅ **FastAPI** backend for production-ready REST inference
+- ✅ Modular code, production structure, and best practices
 
 ---
 
-## 📂 Folder Structure
-telco-churn-app/
-├── api/ # FastAPI backend (prediction)
-│ └── main.py
-├── models/ # Saved model, scaler, column info
+## 🔧 Tech Stack
+
+| Layer            | Tools Used                            |
+|------------------|----------------------------------------|
+| 📊 Data          | `Pandas`, `NumPy`, `PostgreSQL`        |
+| 🤖 Modeling      | `scikit-learn`, `LightGBM`             |
+| 🧠 Explainability| `SHAP`                                 |
+| 🔙 Backend API   | `FastAPI`, `Uvicorn`                   |
+| 🎨 Frontend UI   | `Streamlit`                            |
+| 🚀 Deployment    | `GitHub`, `Streamlit Cloud`, `Render`  |
+
+---
+
+## 📂 Project Structure
+telco-churn-predictor/
+├── app.py # Streamlit UI
+├── main_notebook.ipynb # Full ML pipeline & SHAP
+├── api/
+│ └── main.py # FastAPI backend
+├── models/
 │ ├── lgbm_model_tuned.pkl
 │ ├── scaler.pkl
+│ ├── scaled_columns.pkl
 │ └── feature_columns.pkl
-├── app.py # Streamlit app (frontend)
-└── README.md # Project documentation
+├── requirements.txt
+└── README.md
 
 ---
 
-## 🧪 How to Run Locally
+## 🚀 How to Run Locally
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/hitesh-bhatnagar/Telco-Customer-Churn-Predictor-Full-Stack-ML-App-
+git clone https://github.com/hitesh-bhatnagar/Telco-Customer-Churn-Predictor-Full-Stack-ML-App-.git
 cd telco-churn-app
 ```
 
 ### 2. Create and activate a virtual environment
 
-```bash
-# Create virtual environment
+``` bash
 python -m venv .venv
 
-# Activate on Linux/Mac
-source .venv/bin/activate
+.venv\Scripts\activate  # On Windows
 
-# Activate on Windows
-.venv\Scripts\activate
+source .venv/bin/activate # On Linux/macOS
+
 ```
 
 ### 3. Install dependencies
@@ -95,24 +93,58 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Start the FastAPI backend (in one terminal)
-
-```bash
-uvicorn api.main:app --reload
-```
-
-Visit [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to view the live Swagger API.
-
-### 5. Start the Streamlit frontend (in another terminal)
+### 4. Run the Streamlit App (UI)
 
 ```bash
 streamlit run app.py
 ```
 
-⭐ Show Your Support
-If you found this project helpful:
+### 5. Run the FastAPI API (optional)
 
-🌟 Star this repo
-🍴 Fork it
-🐛 Submit issues
-📢 Share with friends
+```bash
+uvicorn api.main:app --reload
+```
+
+## SHAP Explainability (Sample)
+
+This project leverages **SHAP (SHapley Additive exPlanations)** to provide transparent and actionable insights into model predictions:
+
+- **Feature Importance:** Identify which features most influence churn risk.
+- **Per-Prediction Explanation:** Visualize individual predictions using waterfall plots.
+- **Dependence Plots:** Explore how feature values impact model output.
+- **Force Plots:** Interactive, intuitive explanations for each customer.
+
+---
+
+## 🌐 Deployment Options
+
+**Streamlit Cloud (UI):**
+- Instantly host `app.py` directly from GitHub.
+- Free, fast, and ideal for demos or sharing with stakeholders.
+
+**Render / Railway (API):**
+- Deploy `api/main.py` using Docker or Gunicorn for scalable REST API services.
+- Perfect for backend ML engineers and production-grade API deployment.
+
+---
+
+## 🙌 Acknowledgements
+
+- **Dataset:** [Kaggle – Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+- Inspired by real-world enterprise ML workflows.
+
+---
+
+## ⭐ Show Your Support
+
+If you found this project valuable:
+
+- 🌟 Star the repository
+- 🍴 Fork and build your own solution
+- 🐛 Report bugs or suggest improvements
+
+## 👨‍💻 Author
+
+**Hitesh Bhatnagar**  
+B.Tech ECE • Data Science & ML Engineer  
+[🔗 LinkedIn](https://www.linkedin.com/in/hitesh-bhatnagar-5a3b391ba) | [💻 GitHub](https://github.com/hitesh-bhatnagar)

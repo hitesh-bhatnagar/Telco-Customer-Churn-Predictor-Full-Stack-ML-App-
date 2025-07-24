@@ -11,7 +11,12 @@
 
 ## Project Overview
 
-This project is a **real-world, production-grade Customer Churn Prediction System** built to showcase the complete skillset of a Data Scientist.
+📊 A complete end-to-end data science project to predict customer churn using machine learning and SHAP explainability.
+
+🚀 **[Click here to use the live app!](https://telco-churn-predictor-tool.streamlit.app/)**
+
+![Streamlit Badge](https://img.shields.io/badge/Deployed-Streamlit-blue?logo=streamlit&logoColor=white)
+
 
 It goes beyond Jupyter notebooks and delivers:
 

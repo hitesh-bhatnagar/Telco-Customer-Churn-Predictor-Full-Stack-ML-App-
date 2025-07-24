@@ -15,7 +15,7 @@
 
 🚀 **[Click here to use the live app!](https://telco-churn-predictor-tool.streamlit.app/)**
 
-![Streamlit Badge](https://img.shields.io/badge/Deployed-Streamlit-blue?logo=streamlit&logoColor=white)
+![Streamlit Badge]([https://img.shields.io/badge/Deployed-Streamlit-blue?logo=streamlit&logoColor=white](https://telco-churn-predictor-tool.streamlit.app/))
 
 
 It goes beyond Jupyter notebooks and delivers:

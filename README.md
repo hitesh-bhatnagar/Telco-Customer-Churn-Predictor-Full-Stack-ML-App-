@@ -11,10 +11,10 @@
 
 ## Project Overview
 
-📊 A complete end-to-end data science project to predict customer churn using machine learning and SHAP explainability.
+🚀🚀🚀 A complete end-to-end data science project to predict customer churn using machine learning and SHAP explainability.
 
 ![Streamlit Badge](https://img.shields.io/badge/Deployed-Streamlit-blue?logo=streamlit&logoColor=white)
-🚀 **[Click here to use the live app!](https://telco-churn-predictor-tool.streamlit.app/)**
+**[Click here to use the live app!](https://telco-churn-predictor-tool.streamlit.app/)**
 
 
 
